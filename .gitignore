@@ -1,0 +1,47 @@
+# ----------------------------
+# Terraform core files
+# ----------------------------
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfstate
+terraform.tfstate.backup
+
+# ----------------------------
+# Terraform lock file
+# (IMPORTANT: keep this in Git, so DO NOT ignore it)
+# ----------------------------
+# .terraform.lock.hcl  ← DO NOT IGNORE THIS FILE
+
+# ----------------------------
+# Crash logs
+# ----------------------------
+crash.log
+crash.*.log
+
+# ----------------------------
+# Terraform variable files (optional - ignore if sensitive)
+# ----------------------------
+*.tfvars
+*.tfvars.json
+
+# ----------------------------
+# Local override files
+# ----------------------------
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ----------------------------
+# IDE / OS files
+# ----------------------------
+.vscode/
+.idea/
+.DS_Store
+
+# ----------------------------
+# Dev container (optional)
+# keep if you want to share setup, ignore if local only
+# ----------------------------
+.devcontainer/
