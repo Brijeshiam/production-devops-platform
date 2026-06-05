@@ -172,18 +172,31 @@ resource "aws_launch_template" "web" {
   vpc_security_group_ids = [
     aws_security_group.webSg.id
   ]
+  # this for the just testing 
+  # user_data = base64encode(<<-EOF
+  #             #!/bin/bash
+  #             apt update -y
+  #             apt install nginx -y
 
+  #             systemctl enable nginx
+  #             systemctl start nginx
+
+  #             echo "<h1>Hello from Auto Scaling Group</h1>" > /var/www/html/index.html
+  #             EOF
+  # )
   user_data = base64encode(<<-EOF
               #!/bin/bash
               apt update -y
-              apt install nginx -y
+              apt install docker.io -y
 
-              systemctl enable nginx
-              systemctl start nginx
+              systemctl start docker
+              systemctl enable docker
 
-              echo "<h1>Hello from Auto Scaling Group</h1>" > /var/www/html/index.html
+              docker pull brijesh112007/devops-app:latest
+
+              docker run -d -p 80:80 brijesh112007/devops-app:latest
               EOF
-  )
+)
 }
 
 
