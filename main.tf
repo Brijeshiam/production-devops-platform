@@ -196,7 +196,7 @@ resource "aws_launch_template" "web" {
 
               docker run -d -p 80:80 brijesh112007/devops-app:latest
               EOF
-)
+  )
 }
 
 
